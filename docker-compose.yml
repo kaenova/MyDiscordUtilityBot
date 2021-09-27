@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  # backend
+  bot:
+    build: 
+      context: bot
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on: 
+      - db
+    volumes:
+      - ./bot:/app
+
+  # databases
+  db:
+    build: 
+      context: db/
+    expose: 
+      - "3306"
+    restart: unless-stopped
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+
+
+  
