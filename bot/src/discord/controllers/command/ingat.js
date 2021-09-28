@@ -2,8 +2,8 @@ function ingat(msg) {
   let attechementID = null;
   let savedMessage = null;
 
-  if (msg.content.trim() !== ""){
-    savedMessage = msg.content
+  if (msg.content.trim() !== "") {
+    savedMessage = msg.content;
   }
 
   // Handling attechement
@@ -21,7 +21,9 @@ function ingat(msg) {
     let fs = require("fs");
     let fetch = require("node-fetch");
     async function download() {
-      let response = await fetch(attachments.url).catch(e => {throw e});
+      let response = await fetch(attachments.url).catch((e) => {
+        throw e;
+      });
       let buffer = await response.buffer();
       fs.writeFile(`public/img/${name}`, buffer, () =>
         console.log(`saved : ${name}`)
@@ -37,27 +39,27 @@ function ingat(msg) {
   });
 
   if (attechementID == null && savedMessage == null) {
-    msg.reply("Tidak ada yang diingatkan")
-    return
+    msg.reply("Tidak ada yang diingatkan");
+    return;
   }
 
   console.log("attecheemtnID: ", attechementID);
-  console.log("savedMessage: ", savedMessage)
+  console.log("savedMessage: ", savedMessage);
 
   // Model insert data
   let data = {
-    id : Date.now(),
-    pesan : savedMessage,
-    gambar : attechementID
-  }
+    id: Date.now(),
+    pesan: savedMessage,
+    gambar: attechementID,
+  };
 
   try {
-    require('../../../model/insert').InsertPengingat(data)
+    require("../../../model/insert").InsertPengingat(data);
   } catch (e) {
-    throw e
+    throw e;
   }
 
-  msg.reply("Pengingat tersimpan")
+  msg.reply("Pengingat tersimpan");
 }
 
 module.exports = { ingat };

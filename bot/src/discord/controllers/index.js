@@ -7,8 +7,7 @@ const commandList = Object.keys(commandFunction);
 
 function controllers(msg) {
   const prefix = process.env.PREFIX;
-  if (msg.content.slice(0, prefix.length) != prefix ||
-      msg.author.bot ) {
+  if (msg.content.slice(0, prefix.length) != prefix || msg.author.bot) {
     return;
   }
 

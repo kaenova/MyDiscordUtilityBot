@@ -1,10 +1,10 @@
 require("dotenv").config();
 var InitDiscord = require("./discord/init");
 var InitScheduler = require("./discord/scheduler/");
-var InitModel = require("./model/init")
+var InitModel = require("./model/init");
 
 console.log("========= Initializing Database =========");
-InitModel.initModel()
+InitModel.initModel();
 console.log("========= Database Initialized =========");
 console.log("========= Initializing Discord BOT =========");
 const client = InitDiscord.initDiscord();
