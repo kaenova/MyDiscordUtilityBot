@@ -18,11 +18,11 @@ function controllers(msg) {
     msg.content.length
   );
 
-  let split_content = msg.content.split(" ");
-  const command = split_content[0];
+  let splitContent = msg.content.split(" ");
+  const command = splitContent[0];
   // removing command
-  split_content.shift();
-  msg.content = split_content.join(" ");
+  splitContent.shift();
+  msg.content = splitContent.join(" ");
 
   if (commandList.includes(command)) {
     try {

@@ -45,6 +45,17 @@ function ingat(msg) {
   console.log("savedMessage: ", savedMessage)
 
   // Model insert data
+  let data = {
+    id : Date.now(),
+    pesan : savedMessage,
+    gambar : attechementID
+  }
+
+  try {
+    require('../../../model/insert').InsertPengingat(data)
+  } catch (e) {
+    throw e
+  }
 
   msg.reply("Pengingat tersimpan")
 }
