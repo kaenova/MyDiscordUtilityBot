@@ -18,3 +18,4 @@ Setiap BOT ini akan mengingatkan, BOT akan menghapus pesan-pesan yang pernah dik
 1. Membuat koneksi dengan database.
 2. Mengambil dan menyimpan gambar ketika ada pesan yang memiliki attachment.
 3. Membuat scheduler
+4. Setiap hari nge cek ke validan image id yang tersimpan di database dengan yang ada di system file, salah satu id tidak ada di database maka akan dihapus.

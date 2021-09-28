@@ -8,10 +8,11 @@
     "discord-api-types": "^0.23.1",
     "discord.js": "12.5.3",
     "dotenv": "^10.0.0",
+    "node-schedule": "^2.0.0",
     "nodemon": "^2.0.13"
   },
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon src/index.js"
   },
   "devDependencies": {
     "prettier": "2.4.1"
