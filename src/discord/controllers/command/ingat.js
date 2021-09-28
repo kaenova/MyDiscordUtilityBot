@@ -43,9 +43,6 @@ function ingat(msg) {
     return;
   }
 
-  console.log("attecheemtnID: ", attechementID);
-  console.log("savedMessage: ", savedMessage);
-
   // Model insert data
   let data = {
     id: Date.now(),
