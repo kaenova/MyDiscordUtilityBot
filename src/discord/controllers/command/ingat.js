@@ -26,7 +26,7 @@ function ingat(msg) {
       });
       let buffer = await response.buffer();
       fs.writeFile(`public/img/${name}`, buffer, () =>
-        console.log(`saved : ${name}`)
+        console.log(`attechement saved : ${name}`)
       );
     }
 
@@ -35,7 +35,7 @@ function ingat(msg) {
     } catch (e) {
       throw e;
     }
-    attechementID = attachments.id;
+    attechementID = attachmentsName;
   });
 
   if (attechementID == null && savedMessage == null) {

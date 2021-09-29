@@ -12,6 +12,14 @@ function initDiscord() {
     controller.controllers(msg);
   });
 
+  client.on('messageReactionAdd', (msg, usr) => {
+    if (!usr.bot){
+    console.log("=================")
+    console.log(msg)
+    // Do delete pengingat
+    }
+  })
+
   console.log("success");
   return client;
 }
