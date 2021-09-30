@@ -11,13 +11,7 @@ function ingat(msg) {
 
   attachments.each((attachments) => {
     let attachmentsName = attachments.name;
-    // Ambil format
-    let format = attachmentsName.slice(
-      attachmentsName.length - 4,
-      attachmentsName.length
-    );
     // Buat nama file
-    let name = attachments.id + format;
     let fs = require("fs");
     let fetch = require("node-fetch");
     async function download() {
@@ -25,8 +19,8 @@ function ingat(msg) {
         throw e;
       });
       let buffer = await response.buffer();
-      fs.writeFile(`public/img/${name}`, buffer, () =>
-        console.log(`attechement saved : ${name}`)
+      fs.writeFile(`public/attechements/${attachmentsName}`, buffer, () =>
+        console.log(`attechement saved : ${attachmentsName}`)
       );
     }
 
@@ -47,7 +41,7 @@ function ingat(msg) {
   let data = {
     id: Date.now(),
     pesan: savedMessage,
-    gambar: attechementID,
+    attechements: attechementID,
   };
 
   try {

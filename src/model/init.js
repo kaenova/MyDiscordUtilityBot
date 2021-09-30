@@ -9,6 +9,13 @@ function initModel() {
     console.log("Creating db.json on public folders");
   }
 
+  if (!fs.existsSync("public/relation.json")) {
+    fs.writeFileSync("public/relation.json", '{"data":[]}', function (err) {
+      throw err;
+    });
+    console.log("Creating relation.json on public folders");
+  }
+
   console.log("success");
 }
 

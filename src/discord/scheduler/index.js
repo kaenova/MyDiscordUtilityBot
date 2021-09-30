@@ -9,12 +9,12 @@ function initScheduler(client) {
    require('./sendPengingat').sendPengingat(client)
   });
 
-  const testRule2 = new scheduler.RecurrenceRule();
-  testRule2.second = 5;
-  testRule2.tz = tz;
-  scheduler.scheduleJob(testRule2, () => {
-   require('./sendPengingat').sendPengingat(client)
-  });
+  // const testRule2 = new scheduler.RecurrenceRule();
+  // testRule2.second = 5;
+  // testRule2.tz = tz;
+  // scheduler.scheduleJob(testRule2, () => {
+  //  require('./sendPengingat').sendPengingat(client)
+  // });
 
 
   console.log("success");
