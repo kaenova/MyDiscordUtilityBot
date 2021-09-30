@@ -30,8 +30,8 @@ function InsertPengingat(data) {
   fs.writeFileSync("public/db.json", rawData);
 }
 
-function InsertRelation(data){
-   /*
+function InsertRelation(data) {
+  /*
   Digunakan sebagai interface insert dengan db.json
   DATA:
   {
@@ -40,7 +40,7 @@ function InsertRelation(data){
   }
 */
 
-let fs = require("fs");
+  let fs = require("fs");
 
   // Check apakah ada atau tidak file db.json
   if (!fs.existsSync("public/relation.json")) {
@@ -55,7 +55,6 @@ let fs = require("fs");
   dataUtama["data"].push(data);
   rawData = JSON.stringify(dataUtama);
   fs.writeFileSync("public/relation.json", rawData);
-
 }
 
 module.exports = { InsertPengingat, InsertRelation };

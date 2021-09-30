@@ -1,3 +1,5 @@
+const { DeletePengingat } = require("./deletePengingat");
+
 function initDiscord() {
   const Discord = require("discord.js");
   const client = new Discord.Client();
@@ -12,13 +14,15 @@ function initDiscord() {
     controller.controllers(msg);
   });
 
-  client.on('messageReactionAdd', (msg, usr) => {
-    if (!usr.bot){
-    console.log("=================")
-    console.log(msg)
-    // Do delete pengingat
+  client.on("messageReactionAdd", (msg, usr) => {
+    if (!usr.bot) {
+      try {
+        DeletePengingat(msg, usr);
+      } catch (e) {
+        msg.message.channel.send(`Pengingat gagal terhapus karena ${e}`);
+      }
     }
-  })
+  });
 
   console.log("success");
   return client;
