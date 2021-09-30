@@ -26,6 +26,20 @@ function sendPengingat(client) {
   let dataUtama = JSON.parse(rawData);
   let ingat = dataUtama["data"];
 
+  let finalMessage;
+  if (ingat.length == 0) {
+    finalMessage = "<@" + process.env.USER_ID + "> tidak ada pengingat ^^";
+    client.channels.cache
+      .get(process.env.INGAT_CHANNEL)
+      .send(finalMessage)
+      .catch((e) => {
+        throw e;
+      });
+    return;
+  } else {
+    finalMessage = "<@" + process.env.USER_ID + ">";
+  }
+
   for (let i = 0; i < ingat.length; i++) {
     if (ingat[i].attechements != null) {
       client.channels.cache
@@ -66,6 +80,13 @@ function sendPengingat(client) {
         });
     }
   }
+
+  client.channels.cache
+    .get(process.env.INGAT_CHANNEL)
+    .send(finalMessage)
+    .catch((e) => {
+      throw e;
+    });
 }
 
 module.exports = { sendPengingat };

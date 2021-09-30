@@ -4,20 +4,13 @@ services:
   # backend
   bot:
     build:
-      context: bot
+      context: .
       dockerfile: Dockerfile
     restart: unless-stopped
     depends_on:
       - db
-    volumes:
-      - ./bot:/app
-
-  # databases
-  db:
-    build:
-      context: db/
-    expose:
-      - "3306"
-    restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      - TOKEN= # Your Discord BOT Token
+      - PREFIX= # Your Personal Prefix, you can set it later using command "prefix"
+      - INGAT_CHANNEL= # Where your pengingat will be send
+      - USER_ID= # Someone that will be tagged when pengigat is send
