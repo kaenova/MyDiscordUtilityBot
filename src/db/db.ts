@@ -1,8 +1,9 @@
-import { Database, sqlite3 } from "sqlite3";
-import { open } from "sqlite";
+import { Sequelize } from "sequelize";
 
-const sqlite3 = require('sqlite3').verbose();
+const db: Sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "data/data.db",
+  logging: false
+});
 
-const db:Database = new sqlite3.Database("data.db")
-
-export { db }
+export { db };

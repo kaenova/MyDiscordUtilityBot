@@ -1,20 +1,29 @@
 import { db } from "./db";
-import { Info, Log, Success } from "../utils/logger";
+import { Critical, Info, Log, Success } from "../utils/logger";
+import Sequelize from "sequelize";
+import { Attachment } from "../model/attachment";
+import { Pengingat } from "../model/pengingat";
 
-async function InitDB() {
-  Info("Starting Migration")
-  // Create Table
-  let statement = []
-  statement.push("CREATE TABLE IF NOT EXISTS pesan")
-  statement.push("CREATE TABLE IF NOT EXISTS file")
-  for (let i = 0; i < statement.length; i++) {
-    Log(`${statement[i]}`)
-    db.run(statement[i], (err) => {
-      Log("Behasil Eksekusi")
-      if (err) throw err.message
-    })
+function InitDB() {
+  Info("Testing Connection")
+  try {
+    db.authenticate()
+    Success("DB is connected")
+  } catch (err) {
+    Critical("DB is fail to connect")
+    throw err
   }
-  Success("Migration Complete")
+
+  Info("Creating table")
+  try {
+    Attachment.sync()
+    Pengingat.sync()
+    Success("Table is created")
+  } catch (err) {
+    Critical("Failed to create table")
+    throw err
+  }
+  
 }
 
 export { InitDB }

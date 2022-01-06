@@ -14,7 +14,7 @@
     "@types/sqlite3": "^3.1.8",
     "discord.js": "^13.5.0",
     "nodemon": "^2.0.15",
-    "sqlite": "^4.0.23",
+    "sequelize": "^6.12.5",
     "sqlite3": "^5.0.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"

@@ -12,26 +12,26 @@ function dateNow(): string {
   let second = date_ob.getSeconds();
 
   // prints date & time in YYYY-MM-DD format
-  return `${date}-${month}-${year} ${hour}:${minute}:${second}`
+  return `${date}-${month}-${year} ${hour}:${minute}:${second}`;
 }
 
 function Info(msg: string) {
-  console.log(`[INFO]\t\t[${dateNow()}]\t${msg}`)
+  console.log(`[INFO]\t\t[${dateNow()}]\t${msg}`);
 }
 function Warning(msg: string) {
-  console.log(`[WARNING]\t[${dateNow()}]\t${msg}`)
+  console.log(`[WARNING]\t[${dateNow()}]\t${msg}`);
 }
 function Error(msg: string) {
-  console.log(`[ERROR]\t\t[${dateNow()}]\t${msg}`)
+  console.log(`[ERROR]\t\t[${dateNow()}]\t${msg}`);
 }
 function Log(msg: string) {
-  console.log(`[LOG]\t\t[${dateNow()}]\t${msg}`)
+  console.log(`[LOG]\t\t[${dateNow()}]\t${msg}`);
 }
 function Success(msg: string) {
-  console.log(`[SUCCESS]\t[${dateNow()}]\t${msg}`)
+  console.log(`[SUCCESS]\t[${dateNow()}]\t${msg}`);
 }
 function Critical(msg: string) {
-  console.log(`[CRITICAL]\t[${dateNow()}]\t${msg}`)
+  console.log(`[CRITICAL]\t[${dateNow()}]\t${msg}`);
 }
 
-export { Info, Warning, Error, Log, Critical, Success } 
+export { Info, Warning, Error, Log, Critical, Success };
