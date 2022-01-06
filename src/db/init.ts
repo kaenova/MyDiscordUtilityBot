@@ -1,8 +1,7 @@
 import { db } from "./db";
 import { Critical, Info, Log, Success } from "../utils/logger";
-import Sequelize from "sequelize";
-import { Attachment } from "../model/attachment";
-import { Pengingat } from "../model/pengingat";
+import { Attachment } from "../entity/attachment";
+import { Pengingat } from "../entity/pengingat";
 
 function InitDB() {
   Info("Testing Connection")
