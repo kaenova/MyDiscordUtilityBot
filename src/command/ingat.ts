@@ -7,6 +7,7 @@ import { db } from "../db/db";
 import { Pengingat } from "../entity/pengingat";
 import { Attachment } from "../entity/attachment";
 import dotenv from "dotenv";
+import { trimSpace } from "../utils/trimSpace";
 
 dotenv.config();
 
@@ -23,7 +24,7 @@ async function downloadAttechement(att: MessageAttachment) {
 const Ingat: Command = {
   nama: "Ingat",
   deskripsi:
-    'Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan pada channel <#' + process.env.INGAT_CHANNEL + '>\nMasukan: `[pesan yang akan diingat] <Optional Attachment>`',
+    'Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan pada channel <#' + process.env.INGAT_CHANNEL + '> 💾\nMasukan: `[pesan yang akan diingat] <Optional Attachment>`',
   panggil: "ingat",
   func(client: Client, msg: Message) {
     /*
@@ -32,6 +33,11 @@ const Ingat: Command = {
     3. Saving the attachment after message is created
     */
     let downloadSucess = true;
+
+    if (trimSpace(msg.content) == "") {
+      msg.reply(`Lihat petunjuk pemakaian dengan memanggil \u0060${process.env.PREFIX}help\u0060`)
+      return
+    }
 
     msg.attachments.each((att) => {
       //FIXME: Ini bugnya kalau misalkan ada nama file yang sama...

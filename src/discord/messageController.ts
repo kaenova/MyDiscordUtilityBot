@@ -39,8 +39,8 @@ async function messageController(client: Client, msg: Message) {
 
   try {
     allPemanggilan[command](client, msg);
-  } catch (e) {
-    msg.reply("Server gagal mengolah, harap coba lagi. 🙇‍♂️🙇‍♀️");
+  } catch (e: any) {
+    msg.reply(`Server gagal mengolah, harap coba lagi. 🙇‍♂️🙇‍♀️ \nError: ${e.message}`);
   }
 }
 

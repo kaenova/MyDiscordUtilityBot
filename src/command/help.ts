@@ -25,7 +25,7 @@ export const Help: Command = {
     const finalPesan = new MessageEmbed()
       .setColor('#000000')
       .setTitle('Command Tersedia')
-      .setAuthor({ name: 'Discord Pengingat by Kaenova'})
+      .setAuthor({ name: 'Discord Pengingat by Kaenova 📑'})
       .setDescription('Berikut merupakan Command yang tersedia pada Bot Ini.\nGunakan Prefix: `'+process.env.PREFIX+'`')
       .addFields(field)
       .setTimestamp()

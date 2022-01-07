@@ -15,7 +15,7 @@ async function messageReactionController(
     HapusPengingat(message);
   } catch (e) {
     Error(`Gagal menghapus dengan id pesan ${message.message.id}`);
-    message.message.channel.send("Gagal dalam menghapus pengingat");
+    message.message.channel.send(`Gagal dalam menghapus pengingat`);
   }
 }
 
