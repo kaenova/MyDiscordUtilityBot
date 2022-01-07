@@ -4,25 +4,24 @@ import { Attachment } from "../entity/attachment";
 import { Pengingat } from "../entity/pengingat";
 
 function InitDB() {
-  Info("Testing Connection")
+  Info("Testing Connection");
   try {
-    db.authenticate()
-    Success("DB is connected")
+    db.authenticate();
+    Success("DB is connected");
   } catch (err) {
-    Critical("DB is fail to connect")
-    throw err
+    Critical("DB is fail to connect");
+    throw err;
   }
 
-  Info("Creating table")
+  Info("Creating table");
   try {
-    Attachment.sync()
-    Pengingat.sync()
-    Success("Table is created")
+    Attachment.sync();
+    Pengingat.sync();
+    Success("Table is created");
   } catch (err) {
-    Critical("Failed to create table")
-    throw err
+    Critical("Failed to create table");
+    throw err;
   }
-  
 }
 
-export { InitDB }
+export { InitDB };

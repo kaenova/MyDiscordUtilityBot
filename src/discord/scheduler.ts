@@ -1,9 +1,7 @@
 import { Client } from "discord.js";
 
 function InitScheduler(client: Client): Client {
-
-
-  return client
+  return client;
 }
 
-export { InitScheduler }
+export { InitScheduler };

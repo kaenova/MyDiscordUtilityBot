@@ -5,11 +5,12 @@ import { Command } from "./command";
 const Tampil: Command = {
   nama: "Tampil",
   panggil: "tampil",
-  deskripsi: "Command ini digunakan untuk menampilkan semua pengingat yang tersimpan.",
+  deskripsi:
+    "Command ini digunakan untuk menampilkan semua pengingat yang tersimpan.",
   func(client: Client, msg: Message) {
-    if (!(msg.channel instanceof TextChannel)) return
-    SendPengingat(client, msg.channel, msg)
-  }
-}
+    if (!(msg.channel instanceof TextChannel)) return;
+    SendPengingat(client, msg.channel, msg);
+  },
+};
 
-export { Tampil }
+export { Tampil };

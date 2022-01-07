@@ -17,6 +17,6 @@ const Pengingat = db.define("Pengingat", {
   },
 });
 
-Pengingat.hasMany(Attachment)
+Pengingat.hasMany(Attachment);
 
 export { Pengingat };
