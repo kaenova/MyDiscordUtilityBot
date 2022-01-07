@@ -7,6 +7,11 @@ async function SendPengingat(
   channel?: TextChannel,
   msg?: Message
 ) {
+  /**
+   Jika Channel digunakan maka akan ke yang diminta
+   Jika message digunakan maka akan dikirimkan ke channel message dikirim 
+  */
+
   const task = await Pengingat.findAll({ include: Attachment });
 
   // Error handling prerequisites
@@ -36,6 +41,7 @@ async function SendPengingat(
     task["Attachments"].forEach((obj) => {
       attment.push(obj["dir"]);
     });
+
     if (channel == undefined) throw new Error("Channel is undefined")
     channel
       .send({

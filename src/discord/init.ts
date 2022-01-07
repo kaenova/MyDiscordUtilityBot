@@ -40,7 +40,7 @@ function InitDiscord(): Client {
   });
 
   // Scheduled Job Default
-  MainClient = InitScheduler(MainClient, CronManager);
+  InitScheduler(MainClient, CronManager);
 
   return MainClient;
 }

@@ -6,6 +6,9 @@ import { Critical, Info } from "../utils/logger";
 import { db } from "../db/db";
 import { Pengingat } from "../entity/pengingat";
 import { Attachment } from "../entity/attachment";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 async function downloadAttechement(att: MessageAttachment) {
   let response = await fetch(att.url).catch((e) => {
@@ -20,7 +23,7 @@ async function downloadAttechement(att: MessageAttachment) {
 const Ingat: Command = {
   nama: "Ingat",
   deskripsi:
-    "Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan",
+    'Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan pada channel <#' + process.env.INGAT_CHANNEL + '>\nMasukan: `[pesan yang akan diingat] <Optional Attachment>`',
   panggil: "ingat",
   func(client: Client, msg: Message) {
     /*
