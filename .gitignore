@@ -3,3 +3,7 @@ node_modules
 .prettierrc.json
 *.png
 public/db.json
+*.db
+*.jpg
+*.png
+*.pdf
