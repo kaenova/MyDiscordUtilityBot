@@ -6,4 +6,4 @@ COPY . .
 
 RUN yarn install
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]
