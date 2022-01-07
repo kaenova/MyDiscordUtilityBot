@@ -1,6 +1,7 @@
 import { Message, EmbedFieldData, MessageEmbed } from 'discord.js';
 import { Client } from 'discord.js';
 import { Command } from ".";
+import { SendPengingat } from '../action/sendPengingat';
 import { CronManager } from '../discord/init';
 import { trimSpace } from '../utils/trimSpace';
 
@@ -65,6 +66,24 @@ async function hapusSchedule(client: Client, msg: Message) {
   }
 }
 
+async function tambahSchedule(client: Client, msg: Message){
+  let split = msg.content.split(" ")
+  if (split.length != 6) {
+    msg.reply(`Masukkan tidak valid pastinkan mengikuti pola \u0060schedule tambah [nama] [cron (ada 5)]\u0060\nContoh: \u0060${process.env.PREFIX}schedule tambah percobaan 1 2 3 4 5\u0060`)
+    return
+  }
+  let nama = split.shift() as string
+  let cron = split.join(" ")
+  try {
+    CronManager.add(nama, cron,  async () => {
+      SendPengingat(client)
+    }, {start: true})
+    msg.reply("Berhasil menambahkan schedule")
+  } catch (e) {
+    msg.reply("Gagal untuk menambahkan schedule")
+  }
+}
+
 export const Scheulde: Command = {
   nama: "Schedule",
   panggil: "schedule",
@@ -85,7 +104,7 @@ export const Scheulde: Command = {
     msg.content = split.join(" ")
 
     if (command == "tambah"){
-
+      tambahSchedule(client, msg)
     } else if (command == "hapus"){
       hapusSchedule(client, msg)
     } else {
