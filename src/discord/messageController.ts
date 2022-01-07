@@ -1,16 +1,16 @@
-import { Message } from "discord.js";
+import { Client, Message } from "discord.js";
 import { Critical, Log } from "../utils/logger";
 import commands, { Command } from "../command";
 const commandss: {[index: string]: Command} = commands
 
-var allPemanggilan:{[index: string]: (msg: Message<boolean>) => void} = {}
+var allPemanggilan:{[index: string]: (client: Client, msg: Message<boolean>) => void} = {}
 let allCommands = Object.keys(commands)
 
 allCommands.forEach((key) => {
   allPemanggilan[commandss[key]['panggil']] = commandss[key]['func']
 })
 
-async function messageController(msg: Message) {
+async function messageController(client: Client, msg: Message) {
   const prefix = process.env.PREFIX
   
   if (prefix === undefined) {
@@ -37,9 +37,9 @@ async function messageController(msg: Message) {
   msg.content = splitContent.join(" ");
   
   if (!Object.keys(allPemanggilan).includes(command)) return
-
+  
   try {
-    allPemanggilan[command](msg)
+    allPemanggilan[command](client, msg)
   } catch (e) {
     msg.reply("Server gagal mengolah, harap coba lagi. 🙇‍♂️🙇‍♀️")
   }

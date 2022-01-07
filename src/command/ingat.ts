@@ -1,4 +1,4 @@
-import { Message, MessageAttachment } from 'discord.js';
+import { Client, Message, MessageAttachment } from 'discord.js';
 import { Command } from ".";
 import fs from 'fs';
 import fetch from 'node-fetch';
@@ -21,7 +21,7 @@ const Ingat: Command = {
   nama: "Ingat",
   deskripsi: "Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan",
   panggil: "ingat",
-  func(msg: Message) {
+  func(client: Client, msg: Message) {
     /*
     1. Downloading all attachments if available
     2. Saving the message
@@ -30,6 +30,7 @@ const Ingat: Command = {
     let downloadSucess = true;
 
     msg.attachments.each((att) => {
+      //FIXME: Ini bugnya kalau misalkan ada nama file yang sama...
       try {
         downloadAttechement(att)
       } catch (e) {
@@ -67,12 +68,15 @@ const Ingat: Command = {
             })
           })
         } catch {
-          Error(`Gagal untuk memasukkan data ke database`)
           throw new Error("Gagal dalam mendownload file")
         }
-      }().then(() => {msg.reply("Berhasil menyimpan pengingat ✅")})
+      }().then(() => { msg.reply("Berhasil menyimpan pengingat ✅") }).catch(e => {
+
+        Error(`Gagal untuk memasukkan data ke database`)
+        throw new Error("Gagal dalam mendownload file")
+      })
     )
   }
 }
 
-export {Ingat}
+export { Ingat }

@@ -34,4 +34,4 @@ function Critical(msg: string) {
   console.log(`[CRITICAL]\t[${dateNow()}]\t${msg}`);
 }
 
-export { Info, Warning, Error, Log, Critical, Success };
+export { Info, Warning, Error, Log, Critical, Success, dateNow };

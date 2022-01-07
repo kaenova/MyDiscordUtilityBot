@@ -12,6 +12,9 @@ const Pengingat = db.define("Pengingat", {
   text: {
     type: DataTypes.TEXT,
   },
+  id_msg: {
+    type: DataTypes.TEXT,
+  },
 });
 
 Pengingat.hasMany(Attachment)

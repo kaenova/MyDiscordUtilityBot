@@ -17,7 +17,7 @@ function InitDiscord(): Client {
 
   // On Created Message
   client.on('messageCreate', async (msg) => {
-    messageController(msg)
+    messageController(client, msg)
   })
   return client;
 }
