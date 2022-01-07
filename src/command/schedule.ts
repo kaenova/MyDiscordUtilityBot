@@ -88,7 +88,7 @@ export const Scheulde: Command = {
   nama: "Schedule",
   panggil: "schedule",
   deskripsi:
-    "Command ini digunakan untuk menampilkan semua pengingat yang tersimpan.",
+    "Command ini digunakan untuk menampilkan schedule.",
   func(client: Client, msg: Message) {
     
     // Tampilkan Schedule
