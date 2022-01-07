@@ -4,7 +4,7 @@ import { Attachment, Pengingat } from "../entity";
 
 async function SendPengingat(
   client: Client,
-  channel: TextChannel,
+  channel?: TextChannel,
   msg?: Message
 ) {
   const task = await Pengingat.findAll({ include: Attachment });
@@ -14,6 +14,8 @@ async function SendPengingat(
     Critical("Harus menyiapkan Environment Ingat Channel");
     throw new Error("Harus menyiapkan Environment Ingat Channel");
   }
+  if (channel == undefined) 
+    channel = await client.channels.fetch(process.env.INGAT_CHANNEL) as TextChannel
 
   // Tidak ada pengingat
   if (task.length == 0) {
@@ -34,7 +36,7 @@ async function SendPengingat(
     task["Attachments"].forEach((obj) => {
       attment.push(obj["dir"]);
     });
-
+    if (channel == undefined) throw new Error("Channel is undefined")
     channel
       .send({
         // @ts-ignore

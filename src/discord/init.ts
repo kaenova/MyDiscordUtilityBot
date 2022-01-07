@@ -3,20 +3,24 @@ import { Critical, Info, Log } from "../utils/logger";
 import { messageController } from "./messageController";
 import { messageReactionController } from "./messageReactionController";
 import { InitScheduler } from "./scheduler";
+import CrontabManager from 'cron-job-manager'
+
+//@ts-ignore
+var CronManager = new CrontabManager();
+var MainClient = new Client({
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_MESSAGES,
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+  ],
+});
 
 function InitDiscord(): Client {
-  var client = new Client({
-    intents: [
-      Intents.FLAGS.GUILDS,
-      Intents.FLAGS.GUILD_MESSAGES,
-      Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-    ],
-  });
 
   // On Init
-  client.on("ready", () => {
-    if (client.user !== null) {
-      Info(`Logged in as ${client.user.tag}`);
+  MainClient.on("ready", () => {
+    if (MainClient.user !== null) {
+      Info(`Logged in as ${MainClient.user.tag}`);
     } else {
       Critical("User is null");
       throw new Error("User is null");
@@ -24,21 +28,21 @@ function InitDiscord(): Client {
   });
 
   // On Created Message
-  client.on("messageCreate", async (msg) => {
-    messageController(client, msg);
+  MainClient.on("messageCreate", async (msg) => {
+    messageController(MainClient, msg);
   });
 
   // On Message Reaction
-  client.on("messageReactionAdd", async (msg, user) => {
+  MainClient.on("messageReactionAdd", async (msg, user) => {
     if (!(user instanceof User)) return;
     if (!(msg instanceof MessageReaction)) return;
-    messageReactionController(client, msg, user);
+    messageReactionController(MainClient, msg, user);
   });
 
-  // Scheduled Job
-  client = InitScheduler(client);
+  // Scheduled Job Default
+  MainClient = InitScheduler(MainClient, CronManager);
 
-  return client;
+  return MainClient;
 }
 
-export { InitDiscord };
+export { InitDiscord, CronManager, MainClient };
