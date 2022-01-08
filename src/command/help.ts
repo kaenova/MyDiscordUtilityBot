@@ -15,7 +15,7 @@ export const Help: Command = {
     
     Object.keys(commandss).forEach(key => {
       var embed: EmbedFieldData = {
-        name : commandss[key].nama+ " [`!"+commandss[key].panggil+"`]",
+        name : commandss[key].nama+ " [`"+process.env.PREFIX+commandss[key].panggil+"`]",
         value : commandss[key].deskripsi
       }
       field.push(embed)
