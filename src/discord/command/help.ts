@@ -8,14 +8,14 @@ export const Help: Command = {
   panggil: "help",
   deskripsi:
     "Command ini digunakan untuk menampilkan pesan ini.",
-  func(client: Client, msg: Message) {
+  async func(client: Client, msg: Message) {
     const commandss: { [index: string]: Command } = command;
 
     var field: Array<EmbedFieldData> = []
     
     Object.keys(commandss).forEach(key => {
       var embed: EmbedFieldData = {
-        name : commandss[key].nama+ " [`!"+commandss[key].panggil+"`]",
+        name : commandss[key].nama+ " [`"+process.env.PREFIX+commandss[key].panggil+"`]",
         value : commandss[key].deskripsi
       }
       field.push(embed)

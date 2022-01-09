@@ -1,0 +1,115 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:-//Moodle Pty Ltd//NONSGML Moodle Version 2020061500.03//EN
+VERSION:2.0
+BEGIN:VEVENT
+UID:604935@lms.telkomuniversity.ac.id
+SUMMARY:[Update] Post Test Week 11 closes
+DESCRIPTION:Aturan Pelaksanaan Post-Test :\n\nPost-Test ini dapat diakses p
+	ada tanggal 4 Januari 2022 waktu 15:00s/d tanggal 5 Januari 2022 waktu 15:0
+	0\n\nPost-Test terdiri dari 10 soal \n\nDurasi waktu pelaksanaan Post-Test 
+	adalah 15 menit\n\nMasing-masing mahasiswa memilki 2 kesempatan mengerjakan
+	 Post-Test\, dimana nilai yang diambil adalah nilai terbaik.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20220104T024312Z
+DTSTAMP:20220109T091708Z
+DTSTART:20220105T080000Z
+DTEND:20220105T080000Z
+CATEGORIES:CII3E3-IF-43-02
+END:VEVENT
+BEGIN:VEVENT
+UID:604943@lms.telkomuniversity.ac.id
+SUMMARY:[Update] Post Test Week 12 closes
+DESCRIPTION:Aturan Pelaksanaan Post-Test :\n\nPost-Test ini dapat diakses p
+	ada tanggal 4 Januari 2022 waktu 15:00s/d tanggal 5 Januari 2022 waktu 15:0
+	0\n\nPost-Test terdiri dari 10 soal \n\nDurasi waktu pelaksanaan Post-Test 
+	adalah 15 menit\n\nMasing-masing mahasiswa memilki 2 kesempatan mengerjakan
+	 Post-Test\, dimana nilai yang diambil adalah nilai terbaik.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20220104T024605Z
+DTSTAMP:20220109T091708Z
+DTSTART:20220105T080000Z
+DTEND:20220105T080000Z
+CATEGORIES:CII3E3-IF-43-02
+END:VEVENT
+BEGIN:VEVENT
+UID:604946@lms.telkomuniversity.ac.id
+SUMMARY:[Update] Post Test Week 13-14 closes
+DESCRIPTION:Aturan Pelaksanaan Post-Test :\n\nPost-Test ini dapat diakses p
+	ada tanggal 4 Januari 2022 waktu 15:00s/d tanggal 5 Januari 2022 waktu 15:0
+	0\n\nPost-Test terdiri dari 10 soal \n\nDurasi waktu pelaksanaan Post-Test 
+	adalah 15 menit\n\nMasing-masing mahasiswa memilki 2 kesempatan mengerjakan
+	 Post-Test\, dimana nilai yang diambil adalah nilai terbaik.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20220104T024738Z
+DTSTAMP:20220109T091708Z
+DTSTART:20220105T080000Z
+DTEND:20220105T080000Z
+CATEGORIES:CII3E3-IF-43-02
+END:VEVENT
+BEGIN:VEVENT
+UID:601358@lms.telkomuniversity.ac.id
+SUMMARY:Tugas W13:Prototyping dan Rencana Pengujian is due
+DESCRIPTION:TUGAS KELOMPOK\n\nSUB CLO3 : MAHASISWA MAMPU MEMBUAT RENCANA PE
+	NGUJIAN DAN MEMBUAT PROTOTYPE UNTUK MENDUKUNG PENGUJIAN  (STEP 14 PROSES DE
+	SAIN UI)\n\nTUGAS INI TERDIRI DARI :\n\n(1) MENENTUKAN USABILITY GOALS YANG
+	 AKAN DIUJI & MEMPERSIAPKAN TOOLS PENGUJIAN\n\n(2) MENYUSUN SCENARIO DAN TA
+	SK PENGUJIAN\n\n(3) MEMPERSIAPKAN PROTOTYPE DAN RUNDOWN SESSION PENGUJIAN\n
+	\n(4) PEMBUATAN LAPORAN\n\nBUAT DAN LAPORKANLAH HAL-HAL SEBAGAI BERIKUT:\n\
+	nA. LAPORAN TAHAPAN UNTUK STEP 14 YANG BERISI CLICKABLE PROTOTYPE DAN RENCA
+	NA PENGUJIAN :\n\n(1) Penentuan dan justifikasi rencana usability testing y
+	ang meliputi aspek: hipotesis dan parameter yang diukur.\n\nHipotesis: hipo
+	tesis (key questions) yang ingin dijawab jelas dan dapat terjawab dengan me
+	lakukan usability testing\nParameter yang diukur: parameter (variable) yang
+	 diukur dapat menjawab hipotesis/pertanyaan testing(2) Penentuan dan justif
+	ikasi task dan scenario yang meliputi aspek: kelengkapan task dan kejelasan
+	 skenario.\n\nKelengkapan task: usability testing task mencakup task-task i
+	nti dari task analisis tahap sebelumnya ditambah dengan task yang mungkin j
+	arang dilakukan.\nKejelasan scenario (dan tidak bias): scenario memberikan 
+	context yang cukup untuk partisipan melakukan task di usability testing tan
+	pa memberikan clue (misal menyebut term yang ada di user interface) (3) Pen
+	entuan dan justifikasi logistik yang meliputi aspek: prototype dan ruwndown
+	 session.\n\nPrototype-task-scenario: prototype dipersiapkan untuk mendukun
+	g seluruh usabiliy testing task dan scenario\nRundown session: terdapat run
+	down sesi usability testing (misal dari introduction\, pemberian task\, dan
+	 penutupan sesi)\n\nB. INFORMASI LAPORAN & KELOMPOK YANG BERISI: \n\n(1) st
+	ruktur laporan yang baik dan mudah dimengerti.\n\n(2) menyertakan link doku
+	men laporan akhir dan link prototype\n\n(3) memuat peran/distribusi anggota
+	 kelompok yang jelas dan baik\n\nCATATAN :\n\nUntuk Laporan yang diupload p
+	ada LMS\, hanya berfokus pada tugas minggu ini dan dibuat dalam bentuk slid
+	e dengan format PDF!\n\nTugas dikerjakan dalam waktu 5 HARI\, PERHATIKAN DE
+	ADLINE TUGAS!\, Melebihi tanggal tersebut mahasiswa tidak dapat mengumpulka
+	n tugas.\n\nFile tugas diupload dengan format PDF dengan ukuran maksimal 51
+	2KB\n\nSelamat mengerjakan dan terima kasih\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20220105T091236Z
+DTSTAMP:20220109T091708Z
+DTSTART:20220109T165800Z
+DTEND:20220109T165800Z
+CATEGORIES:CII3A3-IF-43-02
+END:VEVENT
+BEGIN:VEVENT
+UID:608723@lms.telkomuniversity.ac.id
+SUMMARY:Informasi Pengumpulan Tugas Besar Penetration Testing is due
+DESCRIPTION:Berikut ini merupakan informasi mengenai pengumpulan tugas besa
+	r penetration testing\n\n	* Tugas di submit secara individu\n	* File yang d
+	ikumpulkan adalah file Laporan dan Presentasi\, kedua file tersebut dalam e
+	kstensi PDF\n	* Format penamaan file laporan adalah sebagi berikut\nnim_nam
+	adepan_namabelakang_presentasi.pdf\nnim_namadepan_namabelakang_laporan.pdf\
+	n	* Apabila file presentasi/file laporan memiliki ukuran lebih dari yang di
+	tentukan\, embedd link (diupload ke google drive) dalam file laporan dan fi
+	le presentasi (dalam bentuk PDF). Jangan lupa untuk invite danbiya@telkomun
+	iversity.ac.id pada file yang telah di upload di drive.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20220109T025435Z
+DTSTAMP:20220109T091708Z
+DTSTART:20220112T165900Z
+DTEND:20220112T165900Z
+CATEGORIES:CII3E3-IF-43-02
+END:VEVENT
+END:VCALENDAR

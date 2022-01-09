@@ -1,6 +1,6 @@
 import { Client, Message } from "discord.js";
 import { Critical, Log } from "../utils/logger";
-import commands, { Command } from "../command";
+import commands, { Command } from "./command";
 const commandss: { [index: string]: Command } = commands;
 
 var allPemanggilan: {

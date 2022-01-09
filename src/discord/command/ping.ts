@@ -5,7 +5,7 @@ const Ping: Command = {
   deskripsi: "Digunakan untuk pengetesan server ping 🏓",
   nama: "Ping",
   panggil: "ping",
-  func(client: Client, msg: Message) {
+  async func(client: Client, msg: Message) {
     msg.reply("Pong 🏓");
   },
 };

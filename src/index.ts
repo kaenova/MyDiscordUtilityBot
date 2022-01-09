@@ -1,10 +1,15 @@
 import { Log, Warning, Error, Info, Critical, Success } from "./utils/logger";
 import { InitDB } from "./db/init";
 import { InitDiscord } from "./discord/init";
-import { InitScheduler } from "./discord/scheduler";
 import dotenv from "dotenv";
+// @ts-ignore
+import { InitFrontend } from "./frontend/init";
+import { PostSetupDiscord } from "./discord/post";
 
 dotenv.config();
+
+// Default Prefix
+process.env.PREFIX = "!" || process.env.PREFIX
 
 Info("Initializing Database");
 InitDB();
@@ -12,4 +17,16 @@ InitDB();
 Info("Initializing Discord BOT");
 var client = InitDiscord();
 
-client.login(process.env.TOKEN);
+if (process.env.WEB !== 'false'){
+  Info("Initializing Frontend");
+  InitFrontend();
+}
+
+// Run any async modules
+(
+  async function () {
+    client.login(process.env.TOKEN).then(() => {
+      PostSetupDiscord()
+    });
+  }()
+)

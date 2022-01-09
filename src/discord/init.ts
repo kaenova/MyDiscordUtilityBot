@@ -2,7 +2,7 @@ import { Client, Intents, MessageReaction, User } from "discord.js";
 import { Critical, Info, Log } from "../utils/logger";
 import { messageController } from "./messageController";
 import { messageReactionController } from "./messageReactionController";
-import { InitScheduler } from "./scheduler";
+import { InitScheduler } from "../scheduler/init";
 import CrontabManager from 'cron-job-manager'
 
 //@ts-ignore

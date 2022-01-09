@@ -1,6 +1,6 @@
 import { MessageReaction } from "discord.js";
-import { Pengingat, Attachment } from "../entity";
-import { Log } from "../utils/logger";
+import { Pengingat, Attachment } from "../../entity";
+import { Log } from "../../utils/logger";
 
 async function HapusPengingat(msg: MessageReaction) {
   var id: string = msg.message.id;

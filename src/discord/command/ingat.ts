@@ -2,12 +2,12 @@ import { Client, Message, MessageAttachment } from "discord.js";
 import { Command } from ".";
 import fs from "fs";
 import fetch from "node-fetch";
-import { Critical, Info } from "../utils/logger";
-import { db } from "../db/db";
-import { Pengingat } from "../entity/pengingat";
-import { Attachment } from "../entity/attachment";
+import { Critical, Info } from "../../utils/logger";
+import { db } from "../../db/db";
+import { Pengingat } from "../../entity/pengingat";
+import { Attachment } from "../../entity/attachment";
 import dotenv from "dotenv";
-import { trimSpace } from "../utils/trimSpace";
+import { trimSpace } from "../../utils/trimSpace";
 
 dotenv.config();
 
@@ -26,7 +26,7 @@ const Ingat: Command = {
   deskripsi:
     'Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan pada channel <#' + process.env.INGAT_CHANNEL + '> 💾\nMasukan: `[pesan yang akan diingat] <Optional Attachment>`',
   panggil: "ingat",
-  func(client: Client, msg: Message) {
+  async func(client: Client, msg: Message) {
     /*
     1. Downloading all attachments if available
     2. Saving the message

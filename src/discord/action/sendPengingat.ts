@@ -1,6 +1,6 @@
 import { Client, Message, TextChannel } from "discord.js";
-import { Critical, dateNow, Log } from "../utils/logger";
-import { Attachment, Pengingat } from "../entity";
+import { Critical, dateNow, Log } from "../../utils/logger";
+import { Attachment, Pengingat } from "../../entity";
 
 async function SendPengingat(
   client: Client,
@@ -12,6 +12,7 @@ async function SendPengingat(
    Jika message digunakan maka akan dikirimkan ke channel message dikirim 
   */
 
+  // Get all data from database
   const task = await Pengingat.findAll({ include: Attachment });
 
   // Error handling prerequisites

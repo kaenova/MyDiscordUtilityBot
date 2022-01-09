@@ -1,6 +1,6 @@
 import { Client, MessageReaction, User } from "discord.js";
 import { Log } from "../utils/logger";
-import { HapusPengingat } from "../action/hapusPengingat";
+import { HapusPengingat } from "./action/hapusPengingat";
 
 async function messageReactionController(
   client: Client,
