@@ -11,11 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.8",
     "@types/sqlite3": "^3.1.8",
     "cron-job-manager": "^2.2.1",
     "discord.js": "^13.5.0",
     "dotenv": "^10.0.0",
+    "express": "^4.17.2",
     "nodemon": "^2.0.15",
     "sequelize": "^6.12.5",
     "sqlite3": "^5.0.2",
