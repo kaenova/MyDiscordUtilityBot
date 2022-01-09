@@ -2,12 +2,12 @@ import { Client, Message, MessageAttachment } from "discord.js";
 import { Command } from ".";
 import fs from "fs";
 import fetch from "node-fetch";
-import { Critical, Info } from "../utils/logger";
-import { db } from "../db/db";
-import { Pengingat } from "../entity/pengingat";
-import { Attachment } from "../entity/attachment";
+import { Critical, Info } from "../../utils/logger";
+import { db } from "../../db/db";
+import { Pengingat } from "../../entity/pengingat";
+import { Attachment } from "../../entity/attachment";
 import dotenv from "dotenv";
-import { trimSpace } from "../utils/trimSpace";
+import { trimSpace } from "../../utils/trimSpace";
 
 dotenv.config();
 

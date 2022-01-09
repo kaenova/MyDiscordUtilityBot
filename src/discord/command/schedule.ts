@@ -2,9 +2,9 @@ import { Message, EmbedFieldData, MessageEmbed } from 'discord.js';
 import { Client } from 'discord.js';
 import { Command } from ".";
 import { SendPengingat } from '../action/sendPengingat';
-import { CronManager } from '../discord/init';
-import { trimSpace } from '../utils/trimSpace';
-import { ScheduleList } from '../utils/schedulerList';
+import { CronManager } from '../init';
+import { trimSpace } from '../../utils/trimSpace';
+import { ScheduleList } from '../../utils/schedulerList';
 
 async function sendSchedule(client: Client, msg: Message) {
   var field: Array<EmbedFieldData> = []

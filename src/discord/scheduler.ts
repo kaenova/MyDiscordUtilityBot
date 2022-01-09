@@ -1,6 +1,6 @@
 import CrontabManager from 'cron-job-manager';
 import { Client, TextChannel } from "discord.js";
-import { SendPengingat } from '../action/sendPengingat';
+import { SendPengingat } from './action/sendPengingat';
 import { Log } from '../utils/logger';
 
 function InitScheduler(client: Client, manager: CrontabManager) {

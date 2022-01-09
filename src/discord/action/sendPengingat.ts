@@ -1,6 +1,6 @@
 import { Client, Message, TextChannel } from "discord.js";
-import { Critical, dateNow, Log } from "../utils/logger";
-import { Attachment, Pengingat } from "../entity";
+import { Critical, dateNow, Log } from "../../utils/logger";
+import { Attachment, Pengingat } from "../../entity";
 
 async function SendPengingat(
   client: Client,
