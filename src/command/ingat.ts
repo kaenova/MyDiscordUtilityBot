@@ -26,7 +26,7 @@ const Ingat: Command = {
   deskripsi:
     'Digunakan untuk menyimpan pengingat yang setiap waktu akan di ingatkan pada channel <#' + process.env.INGAT_CHANNEL + '> 💾\nMasukan: `[pesan yang akan diingat] <Optional Attachment>`',
   panggil: "ingat",
-  func(client: Client, msg: Message) {
+  async func(client: Client, msg: Message) {
     /*
     1. Downloading all attachments if available
     2. Saving the message

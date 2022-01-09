@@ -12,4 +12,9 @@ InitDB();
 Info("Initializing Discord BOT");
 var client = InitDiscord();
 
-client.login(process.env.TOKEN);
+
+(
+  async function () {
+    client.login(process.env.TOKEN);
+  }()
+)

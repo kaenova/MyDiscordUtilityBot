@@ -7,7 +7,7 @@ const Tampil: Command = {
   panggil: "tampil",
   deskripsi:
     "Command ini digunakan untuk menampilkan semua pengingat yang tersimpan.",
-  func(client: Client, msg: Message) {
+  async func(client: Client, msg: Message) {
     if (!(msg.channel instanceof TextChannel)) return;
     SendPengingat(client, msg.channel, msg);
   },

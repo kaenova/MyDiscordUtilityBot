@@ -8,7 +8,7 @@ export const Help: Command = {
   panggil: "help",
   deskripsi:
     "Command ini digunakan untuk menampilkan pesan ini.",
-  func(client: Client, msg: Message) {
+  async func(client: Client, msg: Message) {
     const commandss: { [index: string]: Command } = command;
 
     var field: Array<EmbedFieldData> = []
