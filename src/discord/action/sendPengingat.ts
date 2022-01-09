@@ -12,6 +12,7 @@ async function SendPengingat(
    Jika message digunakan maka akan dikirimkan ke channel message dikirim 
   */
 
+  // Get all data from database
   const task = await Pengingat.findAll({ include: Attachment });
 
   // Error handling prerequisites

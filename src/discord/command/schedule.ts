@@ -5,6 +5,7 @@ import { SendPengingat } from '../action/sendPengingat';
 import { CronManager } from '../init';
 import { trimSpace } from '../../utils/trimSpace';
 import { ScheduleList } from '../../utils/schedulerList';
+import { SendTugas } from '../action/sendTugas';
 
 async function sendSchedule(client: Client, msg: Message) {
   var field: Array<EmbedFieldData> = []
@@ -26,7 +27,7 @@ async function sendSchedule(client: Client, msg: Message) {
     .setColor('#000000')
     .setTitle('Schedule Pengingat')
     .setAuthor({ name: 'Discord Pengingat by Kaenova 📑' })
-    .setDescription('Berikut merupakan schedule bot untuk mengingatkan anda')
+    .setDescription('Berikut merupakan schedule bot untuk mengingatkan pengingat dan tugas anda')
     .addFields(field)
     .addFields({ name: 'Tambah Schedule', value: `\u0060schedule tambah [nama] [cron]\u0060`, inline: true })
     .addFields({ name: 'Hapus Schedule', value: `\u0060schedule hapus [nama]\u0060`, inline: true })
@@ -47,7 +48,7 @@ async function hapusSchedule(client: Client, msg: Message) {
 async function tambahSchedule(client: Client, msg: Message) {
   let split = msg.content.split(" ")
   if (split.length != 6) {
-    msg.reply(`Masukkan tidak valid pastinkan mengikuti pola \u0060schedule tambah [nama] [cron (ada 5)]\u0060\nContoh: \u0060${process.env.PREFIX}schedule tambah percobaan 1 2 3 4 5\u0060`)
+    msg.reply(`Masukkan tidak valid pastinkan mengikuti pola \u0060schedule tambah [nama] [cron (ada 5)]\u0060\nContoh: \u0060schedule tambah percobaan 1 2 3 4 5\u0060`)
     return
   }
   let nama = split.shift() as string
@@ -55,6 +56,7 @@ async function tambahSchedule(client: Client, msg: Message) {
   try {
     CronManager.add(nama, cron, async () => {
       SendPengingat(client)
+      SendTugas(client)
     }, { start: true })
     msg.reply("Berhasil menambahkan schedule")
   } catch (e) {

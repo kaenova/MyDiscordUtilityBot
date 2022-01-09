@@ -5,6 +5,7 @@ import { Ingat } from "./ingat";
 import { Tampil } from "./tampil";
 import { Help } from './help';
 import { Prefix } from './prefix';
+import {Tugas} from "./tugas";
 
 export { Command };
 export default {
@@ -12,6 +13,7 @@ export default {
   Ingat,
   Tampil,
   Scheulde,
+  Tugas,
   Prefix,
   Help,
 };
