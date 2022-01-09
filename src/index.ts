@@ -8,6 +8,8 @@ import { PostSetupDiscord } from "./discord/post";
 
 dotenv.config();
 
+if (process.env.PREFIX == undefined) process.env.PREFIX = "!"
+
 Info("Initializing Database");
 InitDB();
 
