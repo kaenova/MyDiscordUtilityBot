@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
 
@@ -14,11 +12,11 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kaenova/discord-bot-pengingat:latest
+      run: docker build . --file Dockerfile --tag kaenova/my-discord-utility-bot:latest
     - name: Push to Docker Hub
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: kaenova/discord_bot_pengingat
+        repository: kaenova/my-discord-utility-bot
         tags: ${{ github.run_number }}, latest
