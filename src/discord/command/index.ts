@@ -4,6 +4,7 @@ import { Ping } from "./ping";
 import { Ingat } from "./ingat";
 import { Tampil } from "./tampil";
 import { Help } from './help';
+import { Prefix } from './prefix';
 
 export { Command };
 export default {
@@ -11,5 +12,6 @@ export default {
   Ingat,
   Tampil,
   Scheulde,
+  Prefix,
   Help,
 };

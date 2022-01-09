@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
-    "start": "ts-node src/index.ts"
+    "discord": "cross-env WEB=false nodemon src/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -16,10 +16,12 @@
     "@types/sqlite3": "^3.1.8",
     "autoprefixer": "^10.4.2",
     "cron-job-manager": "^2.2.1",
+    "cross-env": "^7.0.3",
     "discord.js": "^13.5.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "next": "^12.0.7",
+    "node-ical": "^0.14.1",
     "nodemon": "^2.0.15",
     "postcss": "^8.4.5",
     "react": "^17.0.2",

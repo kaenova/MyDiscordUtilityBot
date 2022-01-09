@@ -3,7 +3,8 @@ import { InitDB } from "./db/init";
 import { InitDiscord } from "./discord/init";
 import dotenv from "dotenv";
 // @ts-ignore
-import {InitFrontend} from "./frontend/init";
+import { InitFrontend } from "./frontend/init";
+import { PostSetupDiscord } from "./discord/post";
 
 dotenv.config();
 
@@ -13,12 +14,16 @@ InitDB();
 Info("Initializing Discord BOT");
 var client = InitDiscord();
 
-Info("Initializing Frontend");
-InitFrontend();
+if (process.env.WEB !== 'false'){
+  Info("Initializing Frontend");
+  InitFrontend();
+}
 
 // Run any async modules
 (
   async function () {
-    client.login(process.env.TOKEN);
+    client.login(process.env.TOKEN).then(() => {
+      PostSetupDiscord()
+    });
   }()
 )

@@ -1,6 +1,6 @@
 import CrontabManager from 'cron-job-manager';
 import { Client, TextChannel } from "discord.js";
-import { SendPengingat } from './action/sendPengingat';
+import { SendPengingat } from '../discord/action/sendPengingat';
 import { Log } from '../utils/logger';
 
 function InitScheduler(client: Client, manager: CrontabManager) {
@@ -9,6 +9,7 @@ function InitScheduler(client: Client, manager: CrontabManager) {
     throw new Error("Environment ingat channel belum ada")
   }
 
+  // Pengingat Default
   manager.add('default1', '0 7 * * *', async () => {
     SendPengingat(client)
   }, {start: true})
@@ -21,6 +22,7 @@ function InitScheduler(client: Client, manager: CrontabManager) {
     SendPengingat(client)
   }, {start: true})
 
+ 
   // manager.add('default4', '* * * * *', async () => {
   //   SendPengingat(client)
   // }, {start: true})
